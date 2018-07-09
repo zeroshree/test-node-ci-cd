@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var os = require('os');
-app.get('/health',(req,res)=>
+app.get('/health/api',(req,res)=>
        {
        	  var os_health = {};
           os_health.cpus=os.cpus();
