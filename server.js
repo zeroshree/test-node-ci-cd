@@ -1,6 +1,16 @@
-var http = require('http');
+var express = require('express');
+var app = express();
+var os = require('os');
+app.get('/health',(req,res)=>
+       {
+       	  var os_health = {};
+          os_health.cpus=os.cpus();
+          os_health.totalmem=os.totalmem();
+          os_health.freemem=os.freemem();
+          os_health.deployment="green";
+          res.send(JSON.stringify(os_health));
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Blue-Deployment');
-}).listen(5001);
+       }
+  );
+app.listen(3001);
+console.log("your application is running on 3001");
