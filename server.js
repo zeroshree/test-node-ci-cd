@@ -7,7 +7,7 @@ app.get('/health/api',(req,res)=>
           os_health.cpus=os.cpus();
           os_health.totalmem=os.totalmem();
           os_health.freemem=os.freemem();
-          os_health.deployment="green";
+          os_health.deployment="blue";
           res.send(JSON.stringify(os_health));
 
        }
